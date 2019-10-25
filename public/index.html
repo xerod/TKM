@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i%7CMaterial+Icons" rel="stylesheet">
+        <title>title</title>
+        <style>
+            /* Tab content - closed */
+            .tab-content {
+            max-height: 0;
+            -webkit-transition: max-height .35s;
+            -o-transition: max-height .35s;
+            transition: max-height .35s;
+            }
+            /* :checked - resize to full height */
+            .tab input:checked ~ .tab-content {
+            max-height: 100vh;
+            }
+            /* Icon */
+            .tab label::after {
+            float:right;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            line-height: 1.5;
+            font-size: 1.25rem;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+            }
+            /* Icon formatting - closed */
+            .tab input[type=radio] + label::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 mr-4 icon-cheveron-down"><path class="secondary" fill-rule="evenodd" d="M15.3 10.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"></path></svg>');
+            }
+            .tab input[type=radio]:checked + label::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 mr-4 icon-cheveron-up"><path class="secondary" fill-rule="evenodd" d="M8.7 13.7a1 1 0 1 1-1.4-1.4l4-4a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1-1.4 1.4L12 10.42l-3.3 3.3z"></path></svg>');
+            }
+        </style>
+    </head>
+    <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+        <div class="h-screen pb-14 bg-right bg-cover">
+            <!--Nav-->
+            <nav class="bg-white mt-0 fixed w-full z-10 top-0">
+                <div class="container px-12 mx-auto flex flex-wrap items-center">
+                    <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
+                        <a class="text-blue-400 no-underline hover:text-blue-500 hover:no-underline" href="#">
+                            <span class="text-2xl pl-2"><i class="em em-grinning"></i>riliv</span>
+                        </a>
+                    </div>
+                    <div class="flex w-full pt-4 content-center justify-between md:w-1/2 md:justify-end">
+                        <button class="font-sans text-sm font-semibold hover:shadow-outline text-white py-3 px-5 rounded shadow" style="background-image:linear-gradient(273deg,#f46b5a,#f5a623)">
+                                Mulai Assessment Gratis
+                        </button>
+                    </div>
+                </div>
+                <div class="px-10">
+                    <table class="w-full">
+                        <tr>
+                            <td class="pt-4">
+                            <div class="bg-gray-300 h-px">&zwnj;</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </nav>
+            <!--Seperator-->
+            
+            <!--Main-->
+            <div class="container py-32 md:pt-14 px-12 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <!--Left Col-->
+                <div class="justify-end content-left">
+                    <h1 class="flex flex-col my-4 lg:w-2/5 w-full text-3xl md:text-5xl text-gray-800 leading-tight text-center md:text-left slide-in-bottom-h1 font-sans font-semibold">
+                        Cek Kesehatan Mentalmu Gratis
+                    </h1>
+                    <p class="flex flex-col lg:w-2/5 w-full pt-3 font-sans text-gray-700 text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle leading-relaxed">
+                        Langkah pertama menjadi bahagia adalah dengan menyadari kondisi kesahatan mental kamu saat ini. Riliv berkomitmen memberikan layanan kesehatan mental terintegratif mulai dari pengetahuan hingga cara penanganan.
+                    </p>
+                </div>
+                <div class="justify-end content-left">		
+                    <button class="font-sans font-semibold text-lg hover:shadow-outline text-white py-4 px-4 rounded shadow-md" style="background-image:linear-gradient(273deg,#f46b5a,#f5a623)">
+                        Mulai Assessment Sekarang
+                    </button>
+                </div>
+                <!--Right Col-->
+                <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
+                    <div class="w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in"></div>                    
+                </div>
+                <!--Footer-->
+                <div class="w-full text-sm text-center md:text-left fade-in">
+                </div>
+            </div>
+            <div class="container mx-auto py-4 px-48 items-center">
+                <!--Center-->
+                <div class="justify-center pb-40">
+                    <h1 class="pb-10 text-3xl md:text-5xl text-gray-800 text-center font-sans font-semibold">
+                        Mengenai Tes Kesehatan Mental
+                    </h1>
+                    <div class="tab overflow-hidden">
+                        <input class="absolute opacity-0" id="tab-single-one" type="radio" name="tabs2" onload="this.checked = true">
+                        <label class="block p-5 leading-normal cursor-pointer text-xl text-gray-800 font-sans font-bold" for="tab-single-one">
+                            Apa itu tes kesehatan mental?
+                        </label>
+                        <div class="tab-content overflow-hidden leading-normal text-xl text-gray-700 font-sans">
+                            <p class="px-5 pb-5 pt-0">
+                                Kamu bisa mencoba tes kesehatan mental dibawah ini secara gratis. Tujuannya adalah membantu kamu mengetahui kondisi kesehatan mentalmu. Kamu pun bisa menentukan langkah selanjutnya. Jangan khawatir: seluruh data dan hasil tes kamu bersifat rahasia!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab overflow-hidden border-t">
+                        <input class="absolute opacity-0" id="tab-single-two" type="radio" name="tabs2">
+                        <label class="block p-5 leading-normal cursor-pointer text-xl text-gray-800 font-sans font-bold" for="tab-single-two">
+                            Metode apa yang digunakan untuk mengetes?
+                        </label>
+                        <div class="tab-content overflow-hidden leading-normal text-xl text-gray-700 font-sans">
+                            <p class="px-5 pb-5 pt-0">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab overflow-hidden border-t">
+                        <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                        <label class="block p-5 leading-normal cursor-pointer text-xl text-gray-800 font-sans font-bold" for="tab-single-three">
+                            Apa manfaatnya tes kesehatan mental ini untuk saya?
+                        </label>
+                        <div class="tab-content overflow-hidden leading-normal text-xl text-gray-700 font-sans">
+                            <p class="px-5 pb-5 pt-0">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto py-4 px-48 items-center">
+                <!--Center-->
+                <div class="justify-center pb-40">
+                    <h1 class="pb-10 text-2xl md:text-4xl text-gray-800 text-center font-sans font-semibold">
+                        Catatan penting sebelum anda mulai!
+                    </h1>
+                    <div class="max-w-sm w-full lg:max-w-full lg:flex">
+                        <div class="shadow-xl border-gray-100 border-2 p-4 flex flex-col justify-between leading-normal rounded-lg">
+                            <div class="flex-col p-4 text-xl text-gray-600 font-sans leading-relaxed items-center">
+                                <ul class="pl-8 list-outside list-decimal">
+                                    <li>Jangan gunakan alat tes ini sebagai acuan diagnosis.</li>
+                                    <li>Gunakan tes ini sebagai gambaran umum kondisi kamu dan menentukan kebutuhan untuk ke profesional.</li>
+                                    <li>Alat tes ini masih dalam pengembangan, jawaban kamu akan digunakan dalam pengembangan.</li>
+                                    <li>Seluruh data dan hasil tes bersifat <b>rahasia</b> dan hanya digunakan untuk pengembangan alat tes.</li>
+                                    <li>Seluruh alat tes ini diadaptasi berdasarkan alat tes bebas dan daring sehingga dapat diakses secara <b>gratis</b>. Riliv tidak memiliki hak cipta alat tes satu pun.</li>
+                                    <li>Jika kamu memiliki masalah kesehatan mental, <b>segera hubungi bantuan profesional</b>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-16 text-center">
+                        <button class="font-sans font-semibold text-lg hover:shadow-outline text-white py-4 px-20 rounded shadow-md" style="background-image:linear-gradient(273deg,#f46b5a,#f5a623)">
+                                Lanjutkan
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto py-4 px-48 items-center">
+                <!--Center-->
+                <div class="justify-center pb-40">
+                    <h1 class="pb-10 text-2xl md:text-5xl text-gray-800 text-center font-sans font-semibold">
+                        Sebarkan kesadaran kesehatan mental kepada sahabatmu
+                    </h1>
+                    <h2 class="pb-10 text-xl md:text-3xl text-gray-700 text-center font-sans">
+                        Ajak temanmu untuk mengetahui lebih dalam mengenai kondisi kesehatan mentalnya.
+                    </h2>
+                    <div class="text-center">
+                        <button class="font-sans font-semibold hover:shadow-outline text-lg text-white py-4 px-12 rounded shadow-md" style="background-image:linear-gradient(273deg,#f46b5a,#f5a623)">
+                                Bagikan Ke Teman
+                        </buton>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- jQuery if you need it
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          -->
+    </body>
+    <script>
+        /* Optional Javascript to close the radio button version by clicking it again */
+        var myRadios = document.getElementsByName('tabs2');
+        var setCheck;
+        var x = 0;
+        for(x = 0; x < myRadios.length; x++){
+            myRadios[x].onclick = function(){
+                if(setCheck != this){
+                     setCheck = this;
+                }else{
+                    this.checked = false;
+                    setCheck = null;
+            }
+            };
+        }
+
+        document.querySelector('').addEventListener('click', function() {
+            this.classList.toggle('rotated');
+        });
+    </script>
+</html>
